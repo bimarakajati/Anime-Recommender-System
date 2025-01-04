@@ -121,7 +121,7 @@ Deskripsi statistik dari dataset `rating.csv` menunjukkan bahwa rata-rata rating
 
 Dari visualisasi di atas, kita dapat melihat bahwa anime dengan jumlah anggota terbanyak adalah anime yang populer dan memiliki rating yang tinggi. Beberapa anime yang masuk dalam kategori ini antara lain `Death Note`, `Shingeki no Kyojin`, dan `Sword Art Online`.
 
-### Distribusi Rating Anime
+### Distribusi Tipe Anime
 
 <p align="center">
   <img src="images/image-1.png" alt="alt text" width="75%">
