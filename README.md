@@ -257,7 +257,7 @@ Sebelum kita melatih model KNN, kita akan menggunakan TF-IDF (Term Frequency-Inv
 
 ### TF-IDF (Term Frequency-Inverse Document Frequency)
 
-TF-IDF adalah metode yang digunakan untuk mengekstraksi fitur dari teks dengan memberikan bobot pada kata-kata yang muncul dalam teks. TF-IDF terdiri dari dua komponen utama: Term Frequency (TF) dan Inverse Document Frequency (IDF) [[6]](https://www.semrush.com/blog/tf-idf/).
+TF-IDF adalah metode yang digunakan untuk mengekstraksi fitur dari teks dengan memberikan bobot pada kata-kata yang muncul dalam teks. TF-IDF terdiri dari dua komponen utama: Term Frequency (TF) dan Inverse Document Frequency (IDF) [[6]](https://towardsdatascience.com/how-tf-idf-works-3dbf35e568f0).
 
 #### Term Frequency (TF)
 Term Frequency mengukur seberapa sering sebuah kata muncul dalam sebuah dokumen. Rumusnya adalah:
@@ -380,7 +380,7 @@ Pada tahap evaluasi, kita akan menggunakan metrik evaluasi yang sesuai dengan ko
 
 Mean Squared Error (MSE) adalah salah satu metode evaluasi yang umum digunakan dalam data science. MSE menghitung rata-rata dari selisih kuadrat antara nilai prediksi dan nilai aktual.
 
-Dengan kata lain, MSE menghitung berapa rata-rata kesalahan kuadrat dalam prediksi. Semakin kecil nilai MSE, semakin baik kualitas model tersebut [[8]](https://www.trivusi.web.id/2023/03/perbedaan-mae-mse-rmse-dan-mape.html).
+Dengan kata lain, MSE menghitung berapa rata-rata kesalahan kuadrat dalam prediksi. Semakin kecil nilai MSE, semakin baik kualitas model tersebut [[8]](https://medium.com/@jonatasv/metrics-evaluation-mse-rmse-mae-and-mape-317cab85a26b).
 
 Rumus dari MSE adalah:
 
@@ -395,7 +395,7 @@ di mana:
 
 Mean Absolute Error (MAE) adalah metode evaluasi lain yang digunakan dalam data science. MAE menghitung rata-rata dari selisih absolut antara nilai prediksi dan nilai aktual.
 
-Dengan kata lain, MAE menghitung berapa rata-rata kesalahan absolut dalam prediksi. Semakin kecil nilai MAE, semakin baik kualitas model tersebut [[8]](https://www.trivusi.web.id/2023/03/perbedaan-mae-mse-rmse-dan-mape.html).
+Dengan kata lain, MAE menghitung berapa rata-rata kesalahan absolut dalam prediksi. Semakin kecil nilai MAE, semakin baik kualitas model tersebut [[8]](https://medium.com/@jonatasv/metrics-evaluation-mse-rmse-mae-and-mape-317cab85a26b).
 
 Rumus dari MAE adalah:
 
@@ -434,8 +434,8 @@ Dengan demikian, sistem rekomendasi anime yang telah kita kembangkan dapat memba
 
 [5] LP2M. (2023). "*Algoritma K-Nearest Neighbors (KNN) – Pengertian dan Penerapan*". LP2M UMA. https://lp2m.uma.ac.id/2023/02/16/algoritma-k-nearest-neighbors-knn-pengertian-dan-penerapan/
 
-[6] B Mustapic. (2024). "*An Introduction to TF-IDF: What It Is & How to Use It*". Semrush Blog. https://www.semrush.com/blog/tf-idf/
+[6] M Darla. (2021). "*How and Why TF-IDF Works*". Towards Data Science. https://towardsdatascience.com/how-tf-idf-works-3dbf35e568f0
 
 [7] S Banerjee. (2020). "*Collaborative Filtering for Movie Recommendations*". Keras. https://keras.io/examples/structured_data/collaborative_filtering_movielens/
 
-[8] Trivusi. (2023). "*Perbedaan MAE, MSE, RMSE, dan MAPE pada Data Science*". Trivusi. https://www.trivusi.web.id/2023/03/perbedaan-mae-mse-rmse-dan-mape.html
+[8] Jonatasv. (2024). "*Metrics Evaluation: MSE, RMSE, MAE and MAPE*". Medium. https://medium.com/@jonatasv/metrics-evaluation-mse-rmse-mae-and-mape-317cab85a26b
