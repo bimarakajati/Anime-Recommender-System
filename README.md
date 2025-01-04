@@ -219,13 +219,13 @@ Pada tahap ini, kita akan melakukan beberapa langkah data pre-preparation untuk 
 Filtering data rating sangat penting dilakukan karena dataset rating memiliki jumlah data yang sangat besar, mencapai jutaan entri. Dengan jumlah data yang sangat besar ini, penggunaan resource komputasi menjadi sangat tinggi dan dapat menyebabkan proses analisis data menjadi tidak efisien. Oleh karena itu, dilakukan filtering data untuk mengurangi jumlah data yang akan diproses. Salah satu cara yang digunakan adalah dengan menyaring pengguna yang memberikan rating sebanyak 500 atau lebih. Dengan melakukan filtering ini, kita dapat mengurangi jumlah data yang harus diproses tanpa mengorbankan kualitas analisis, sehingga penggunaan resource menjadi lebih efisien dan proses analisis data dapat berjalan lebih cepat.
 
 <p align="center">
-  <img src="image-13.png" alt="alt text" width="75%">
+  <img src="images/image-13.png" alt="alt text" width="75%">
 </p>
 <p align="center">
-  <img src="image-14.png" alt="alt text" width="75%">
+  <img src="images/image-14.png" alt="alt text" width="75%">
 </p>
 <p align="center">
-  <img src="image-15.png" alt="alt text" width="75%">
+  <img src="images/image-15.png" alt="alt text" width="75%">
 </p>
 
 Dari hasil filtering data ini, terdapat sebanyak **1,853** pengguna yang memberikan rating sebanyak 500 atau lebih. Dengan melakukan filtering ini, kita dapat mengurangi jumlah data yang harus diproses dari **7.813.737** menjadi **1.384.631**.
