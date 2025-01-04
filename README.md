@@ -3,10 +3,10 @@
 ## Project Overview
 
 <p align="center">
-  <img src="images/image-12.png" alt="alt text" width="100%">
+  <img src="images/image-12.png" alt="Anime Picture" width="100%">
 </p>
 
-Sistem rekomendasi telah menjadi elemen penting dalam berbagai platform digital, termasuk layanan streaming anime, yang semakin diminati di era modern. Dengan jumlah judul anime yang terus bertambah, pengguna sering kali mengalami kesulitan dalam menemukan anime yang sesuai dengan preferensi mereka [[1]](https://iopscience.iop.org/article/10.1088/1742-6596/1566/1/012057/meta). Masalah ini semakin relevan selama pandemi COVID-19, ketika layanan streaming dan hiburan daring, termasuk anime, mengalami lonjakan popularitas [[2]](https://northwesternnews.rangerpulse.com/during-coronavirus-pandemic-popularity-of-anime-increases/). Pandemi mendorong banyak orang untuk menghabiskan lebih banyak waktu di rumah, sehingga meningkatkan jumlah pelanggan dan penonton pada platform seperti Netflix, Hulu, Crunchyroll, dan Funimation [[3]](https://www.cnnindonesia.com/hiburan/20210120132336-220-596129/pandemi-2020-buat-netflix-kebanjiran-366-juta-pelanggan-baru).
+Sistem rekomendasi telah menjadi elemen penting dalam berbagai platform digital, termasuk layanan streaming anime, yang semakin diminati di era modern. Dengan jumlah judul anime yang terus bertambah, pengguna sering kali mengalami kesulitan dalam menemukan anime yang sesuai dengan preferensi mereka [[1]](https://iopscience.iop.org/article/10.1088/1742-6596/1566/1/012057/meta). Masalah ini semakin relevan selama pandemi COVID-19, ketika layanan streaming dan hiburan daring, termasuk anime, mengalami lonjakan popularitas [[2]](https://northwesternnews.rangerpulse.com/during-coronavirus-pandemic-popularity-of-anime-increases/). Pandemi mendorong banyak orang untuk menghabiskan lebih banyak waktu di rumah, sehingga meningkatkan jumlah pelanggan dan penonton pada platform seperti Netflix [[3]](https://www.cnnindonesia.com/hiburan/20210120132336-220-596129/pandemi-2020-buat-netflix-kebanjiran-366-juta-pelanggan-baru), Hulu, Crunchyroll, dan Funimation.
 
 Kondisi ini menciptakan peluang sekaligus tantangan bagi penyedia layanan untuk menawarkan pengalaman yang lebih personal dan relevan bagi pengguna. Oleh karena itu, proyek ini bertujuan mengembangkan sistem rekomendasi anime yang efektif, guna membantu pengguna menemukan anime yang sesuai dengan selera mereka secara lebih mudah dan cepat. Selain meningkatkan pengalaman pengguna, sistem rekomendasi yang andal juga memiliki potensi untuk meningkatkan retensi pengguna, durasi penggunaan platform, serta pendapatan penyedia layanan [[4]](https://dl.acm.org/doi/10.1145/3097983.3098094).
 
@@ -35,7 +35,7 @@ Untuk mencapai goals yang telah ditetapkan, proyek ini akan mengimplementasikan 
 
 ## Data Understanding
 
-Data yang digunakan dalam proyek ini diambil dari [Anime Recommendations Database](https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database/data) yang tersedia di Kaggle. Dataset ini terdiri dari dua file utama: `anime.csv` yang berisi informasi tentang berbagai anime, dan `rating.csv` yang berisi rating yang diberikan oleh pengguna untuk setiap anime. Dataset ini berisi informasi tentang preferensi pengguna dari 73.516 pengguna pada 12.294 anime. Setiap pengguna dapat menambahkan anime ke daftar yang telah mereka selesaikan dan memberikan rating, dan dataset ini merupakan kompilasi dari rating tersebut.
+Data yang digunakan dalam proyek ini diambil dari [Anime Recommendations Database](https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database/data) yang tersedia di Kaggle. Dataset ini terdiri dari dua file utama: `anime.csv` yang berisi informasi tentang berbagai anime, dan `rating.csv` yang berisi rating yang diberikan oleh pengguna untuk setiap anime. Selain itu, dataset ini memuat informasi dari preferensi pengguna sebanyak 73.516 pengguna pada 12.294 anime. Data anime dan rating pengguna tersebut disediakan oleh API dari myanimelist.net [[5]](https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database/data).
 
 ### Penjelasan Variabel
 
@@ -116,7 +116,7 @@ Deskripsi statistik dari dataset `rating.csv` menunjukkan bahwa rata-rata rating
 ### Top Anime Berdasarkan Jumlah Anggota
 
 <p align="center">
-  <img src="images/image.png" alt="alt text" width="75%">
+  <img src="images/image.png" alt="Top Anime Berdasarkan Jumlah Anggota" width="75%">
 </p>
 
 Dari visualisasi di atas, kita dapat melihat bahwa anime dengan jumlah anggota terbanyak adalah anime yang populer dan memiliki rating yang tinggi. Beberapa anime yang masuk dalam kategori ini antara lain `Death Note`, `Shingeki no Kyojin`, dan `Sword Art Online`.
@@ -124,7 +124,7 @@ Dari visualisasi di atas, kita dapat melihat bahwa anime dengan jumlah anggota t
 ### Distribusi Tipe Anime
 
 <p align="center">
-  <img src="images/image-1.png" alt="alt text" width="75%">
+  <img src="images/image-1.png" alt="Distribusi Tipe Anime" width="75%">
 </p>
 
 Dari visualisasi di atas, kita dapat melihat bahwa anime dengan tipe `TV` adalah yang paling banyak, diikuti oleh anime dengan tipe `OVA`, `Movie`, `Special`, `ONA`, dan `Music` sebagai tipe anime yang paling sedikit.
@@ -150,7 +150,7 @@ Dari tabel di atas, kita dapat melihat bahwa lima data teratas genre anime yang 
 ### Distribusi Rating Anime
 
 <p align="center">
-  <img src="images/image-2.png" alt="alt text" width="75%">
+  <img src="images/image-2.png" alt="Distribusi Rating Anime" width="75%">
 </p>
 
 Dari visualisasi di atas, kita dapat melihat bahwa sebagian besar anime memiliki rating antara `5` hingga `8`. Hal ini menunjukkan bahwa mayoritas anime memiliki rating yang cukup baik, dengan sedikit anime yang memiliki rating sangat rendah atau sangat tinggi. Distribusi ini cenderung **left-skewed**, yang berarti lebih banyak anime yang memiliki rating di atas rata-rata dibandingkan dengan yang memiliki rating di bawah rata-rata. Skewness ini menunjukkan bahwa penonton cenderung memberikan rating yang lebih tinggi untuk anime yang mereka tonton.
@@ -175,7 +175,7 @@ Dari tabel di atas, kita dapat melihat bahwa pengguna dengan `user_id` **48766**
 ### Distribusi Rating Pengguna
 
 <p align="center">
-  <img src="images/image-3.png" alt="alt text" width="75%">
+  <img src="images/image-3.png" alt="Distribusi Rating Pengguna" width="75%">
 </p>
 
 Dari visualisasi di atas, kita dapat melihat bahwa sebagian besar pengguna memberikan rating antara `6` hingga `10`. Hal ini menunjukkan bahwa mayoritas pengguna memberikan rating yang cukup baik untuk anime yang mereka tonton. Selain itu, terdapat sejumlah pengguna yang memiliki rating `-1`, hal menunjukkan bahwa mereka menonton anime tersebut tetapi tidak memberikan rating. Data rating `-1` ini kemungkinan besar akan dihapus karena tidak memberikan informasi yang berguna dalam pembuatan model rekomendasi.
@@ -189,13 +189,13 @@ Pada tahap ini, kita akan melakukan beberapa langkah data pre-preparation untuk 
 Filtering data rating sangat penting dilakukan karena dataset rating memiliki jumlah data yang sangat besar, mencapai jutaan entri. Dengan jumlah data yang sangat besar ini, penggunaan resource komputasi menjadi sangat tinggi dan dapat menyebabkan proses analisis data menjadi tidak efisien. Oleh karena itu, dilakukan filtering data untuk mengurangi jumlah data yang akan diproses. Salah satu cara yang digunakan adalah dengan menyaring pengguna yang memberikan rating sebanyak 500 atau lebih. Dengan melakukan filtering ini, kita dapat mengurangi jumlah data yang harus diproses tanpa mengorbankan kualitas analisis, sehingga penggunaan resource menjadi lebih efisien dan proses analisis data dapat berjalan lebih cepat.
 
 <p align="center">
-  <img src="images/image-13.png" alt="alt text" width="75%">
+  <img src="images/image-13.png" alt="Jumlah baris data rating sebelum filtering" width="75%">
 </p>
 <p align="center">
-  <img src="images/image-14.png" alt="alt text" width="75%">
+  <img src="images/image-14.png" alt="Jumlah pengguna dengan rating anime lebih dari 500" width="75%">
 </p>
 <p align="center">
-  <img src="images/image-15.png" alt="alt text" width="75%">
+  <img src="images/image-15.png" alt="Jumlah baris data rating setelah filtering" width="75%">
 </p>
 
 Dari hasil filtering data ini, terdapat sebanyak **1,853** pengguna yang memberikan rating sebanyak 500 atau lebih. Dengan melakukan filtering ini, kita dapat mengurangi jumlah data yang harus diproses dari **7.813.737** menjadi **1.384.631**.
@@ -223,7 +223,7 @@ Dari tabel di atas, kita dapat melihat bahwa terdapat sebanyak **289.627** ratin
 ### Handling Duplicate Data
 
 <p align="center">
-  <img src="images/image-4.png" alt="alt text" width="75%">
+  <img src="images/image-4.png" alt="Handling Duplicate Data" width="75%">
 </p>
 
 Pada penanganan data duplikat, terlihat bahwa tidak ada data duplikat yang ditemukan dalam dataset `anime.csv` maupun `rating.csv` setelah dilakukan pengecekan. Oleh karena itu, tidak perlu dilakukan penanganan data duplikat dalam tahap ini.
@@ -238,7 +238,7 @@ Content-based Filtering adalah metode rekomendasi yang berfokus pada konten dari
 
 #### K-Nearest Neighbors (KNN)
 
-K-Nearest Neighbors (KNN) adalah algoritma machine learning yang biasa digunakan untuk klasifikasi dan regresi. Pada konteks Content-Based Filtering, KNN juga dapat digunakan untuk merekomendasikan item berdasarkan kesamaan antara item yang dipilih dengan item lainnya. Algoritma KNN bekerja dengan cara mencari K item terdekat dengan item yang dipilih berdasarkan jarak antara item tersebut. Item-item yang memiliki jarak terdekat dengan item yang dipilih akan direkomendasikan kepada pengguna [[5]](https://lp2m.uma.ac.id/2023/02/16/algoritma-k-nearest-neighbors-knn-pengertian-dan-penerapan/).
+K-Nearest Neighbors (KNN) adalah algoritma machine learning yang biasa digunakan untuk klasifikasi dan regresi. Pada konteks Content-Based Filtering, KNN juga dapat digunakan untuk merekomendasikan item berdasarkan kesamaan antara item yang dipilih dengan item lainnya. Algoritma KNN bekerja dengan cara mencari K item terdekat dengan item yang dipilih berdasarkan jarak antara item tersebut. Item-item yang memiliki jarak terdekat dengan item yang dipilih akan direkomendasikan kepada pengguna [[6]](https://lp2m.uma.ac.id/2023/02/16/algoritma-k-nearest-neighbors-knn-pengertian-dan-penerapan/).
 
 Berikut adalah kelebihan dan kekurangan dari Content-Based Filtering menggunakan algoritma KNN:
 
@@ -257,7 +257,7 @@ Sebelum kita melatih model KNN, kita akan menggunakan TF-IDF (Term Frequency-Inv
 
 ### TF-IDF (Term Frequency-Inverse Document Frequency)
 
-TF-IDF adalah metode yang digunakan untuk mengekstraksi fitur dari teks dengan memberikan bobot pada kata-kata yang muncul dalam teks. TF-IDF terdiri dari dua komponen utama: Term Frequency (TF) dan Inverse Document Frequency (IDF) [[6]](https://towardsdatascience.com/how-tf-idf-works-3dbf35e568f0).
+TF-IDF adalah metode yang digunakan untuk mengekstraksi fitur dari teks dengan memberikan bobot pada kata-kata yang muncul dalam teks. TF-IDF terdiri dari dua komponen utama: Term Frequency (TF) dan Inverse Document Frequency (IDF) [[7]](https://towardsdatascience.com/how-tf-idf-works-3dbf35e568f0).
 
 #### Term Frequency (TF)
 Term Frequency mengukur seberapa sering sebuah kata muncul dalam sebuah dokumen. Rumusnya adalah:
@@ -313,7 +313,7 @@ Dari hasil rekomendasi, kita dapat melihat bahwa anime yang direkomendasikan mem
 
 ### Collaborative Filtering (RecommenderNet)
 
-Collaborative Filtering adalah metode rekomendasi yang berfokus pada kesamaan preferensi pengguna. Pada metode ini, rekomendasi diberikan berdasarkan kesamaan preferensi pengguna dengan pengguna lainnya. Salah satu algoritma yang dapat digunakan dalam Collaborative Filtering adalah algoritma deep learning `RecommenderNet`. Berikut adalah kelebihan dan kekurangan dari Collaborative Filtering [[9]](https://developers.google.com/machine-learning/recommendation/collaborative/summary):
+Collaborative Filtering adalah metode rekomendasi yang berfokus pada kesamaan preferensi pengguna. Pada metode ini, rekomendasi diberikan berdasarkan kesamaan preferensi pengguna dengan pengguna lainnya. Salah satu algoritma yang dapat digunakan dalam Collaborative Filtering adalah algoritma deep learning `RecommenderNet`. Berikut adalah kelebihan dan kekurangan dari Collaborative Filtering [[8]](https://developers.google.com/machine-learning/recommendation/collaborative/summary):
 
 **Kelebihan**:
 
@@ -328,14 +328,18 @@ Collaborative Filtering adalah metode rekomendasi yang berfokus pada kesamaan pr
 
 #### RecommenderNet
 
-Di sini, kita akan membuat class RecommenderNet menggunakan class Model dari Keras. Kode class RecommenderNet ini diadaptasi dari tutorial di situs Keras [[7]](https://keras.io/examples/structured_data/collaborative_filtering_movielens/) dengan beberapa penyesuaian untuk kasus yang sedang kita selesaikan.
+Di sini, kita akan membuat class RecommenderNet menggunakan class Model dari Keras. Kode class RecommenderNet ini diadaptasi dari tutorial di situs Keras [[9]](https://keras.io/examples/structured_data/collaborative_filtering_movielens/) dengan beberapa penyesuaian untuk kasus yang sedang kita selesaikan.
+
+<p align="center">
+  <img src="images/image-16.png" alt="RecommenderNet Model" width="50%">
+</p>
 
 #### Encoding Data
 
 Selanjutnya kita akan menyandikan (encode) data user_id dan anime_id ke dalam indeks integer. Selain itu, kita juga akan mencari data rating terendah dan tertinggi yang akan digunakan dalam proses splitting data nanti. Berikut adalah hasil encoding data user_id dan anime_id, dan dataframe yang berisi data jumlah pengguna, anime, dan rating terendah dan tertinggi:
 
 <p align="center">
-  <img src="images/image-6.png" alt="alt text" width="75%">
+  <img src="images/image-6.png" alt="Encoding Data" width="75%">
 </p>
 
 #### Split Data
@@ -343,7 +347,7 @@ Selanjutnya kita akan menyandikan (encode) data user_id dan anime_id ke dalam in
 Lalu, kita akan membagi data menjadi data training dan data testing dengan rasio 70:30. Data training akan digunakan untuk melatih model, sedangkan data testing akan digunakan untuk mengevaluasi model.
 
 <p align="center">
-  <img src="images/image-7.png" alt="alt text" width="25%">
+  <img src="images/image-7.png" alt="Split Data" width="25%">
 </p>
 
 #### Pelatihan Model RecommenderNet
@@ -353,17 +357,17 @@ Setelah itu, kita akan membuat model Collaborative Filtering menggunakan class R
 Dalam proses training, kita akan menggunakan `Adam` sebagai optimizer, `mean_squared_error` sebagai loss function, dan `mean_absolute_error` sebagai metrics. Selain itu, kita juga akan menggunakan `EarlyStopping` untuk menghentikan proses training jika tidak terjadi peningkatan performa model.
 
 <p align="center">
-  <img src="images/image-8.png" alt="alt text" width="50%">
+  <img src="images/image-8.png" alt="Pelatihan Model RecommenderNet" width="50%">
 </p>
 
 Dari output di atas, pelatihan model berhenti setelah `15` epoch dengan nilai mean squared error terendah sebesar `0.0165` dan nilai mean absolute error sebesar `0.0969`
 
-#### Hasil Rekomendasi
+#### Hasil Rekomendasi Collaborative Filtering
 
 Setelah model Collaborative Filtering dilatih, kita dapat menggunakan model tersebut untuk merekomendasikan anime berdasarkan preferensi pengguna. Berikut adalah contoh hasil rekomendasi untuk pengguna random yang dipilih dari hasil encoding data sebelumnya:
 
 <p align="center">
-  <img src="images/image-9.png" alt="alt text" width="75%">
+  <img src="images/image-9.png" alt="Hasil Rekomendasi Collaborative Filtering" width="75%">
 </p>
 
 Hasil dari pengguna random yang dipilih adalah sebagai berikut:
@@ -405,7 +409,7 @@ $$ \text{Recommender System Precision} = \frac{\text{Jumlah item relevan yang di
 #### Hasil Evaluasi Content-Based Filtering
 
 <p align="center">
-  <img src="images/image-5.png" alt="alt text" width="75%">
+  <img src="images/image-5.png" alt="Hasil Evaluasi Content-Based Filtering" width="75%">
 </p>
 
 Dari hasil rekomendasi Content-Based Filtering di atas, diketahui bahwa `Silent Mobius: The Motion Picture` termasuk ke dalam genre `Adventure, Sci-Fi, Supernatural`. Dari 5 anime yang direkomendasikan, 5 anime memiliki genre yang bermiripan (similar). Artinya, **precision model Content-Based Filtering kita sebesar 5/5 atau 100%**.
@@ -418,7 +422,7 @@ Pada tahap evaluasi Collaborative Filtering, kita akan menggunakan metrik evalua
 
 Mean Squared Error (MSE) adalah salah satu metode evaluasi yang umum digunakan dalam data science. MSE menghitung rata-rata dari selisih kuadrat antara nilai prediksi dan nilai aktual.
 
-Dengan kata lain, MSE menghitung berapa rata-rata kesalahan kuadrat dalam prediksi. Semakin kecil nilai MSE, semakin baik kualitas model tersebut [[8]](https://medium.com/@jonatasv/metrics-evaluation-mse-rmse-mae-and-mape-317cab85a26b).
+Dengan kata lain, MSE menghitung berapa rata-rata kesalahan kuadrat dalam prediksi. Semakin kecil nilai MSE, semakin baik kualitas model tersebut [[10]](https://medium.com/@jonatasv/metrics-evaluation-mse-rmse-mae-and-mape-317cab85a26b).
 
 Rumus dari MSE adalah:
 
@@ -433,7 +437,7 @@ di mana:
 
 Mean Absolute Error (MAE) adalah metode evaluasi lain yang digunakan dalam data science. MAE menghitung rata-rata dari selisih absolut antara nilai prediksi dan nilai aktual.
 
-Dengan kata lain, MAE menghitung berapa rata-rata kesalahan absolut dalam prediksi. Semakin kecil nilai MAE, semakin baik kualitas model tersebut [[8]](https://medium.com/@jonatasv/metrics-evaluation-mse-rmse-mae-and-mape-317cab85a26b).
+Dengan kata lain, MAE menghitung berapa rata-rata kesalahan absolut dalam prediksi. Semakin kecil nilai MAE, semakin baik kualitas model tersebut [[10]](https://medium.com/@jonatasv/metrics-evaluation-mse-rmse-mae-and-mape-317cab85a26b).
 
 Rumus dari MAE adalah:
 
@@ -447,7 +451,7 @@ di mana:
 #### Hasil Evaluasi Collaborative Filtering
 
 <p align="center">
-  <img src="images/image-10.png" alt="alt text" width="75%">
+  <img src="images/image-10.png" alt="Hasil Evaluasi Collaborative Filtering" width="75%">
 </p>
 
 Dari hasil evaluasi Collaborative Filtering menggunakan metrik MSE dan MAE, kita dapat melihat bahwa nilai MSE sebesar `0.0165` dan nilai MAE sebesar `0.0969`. Nilai MSE dan MAE yang rendah menunjukkan bahwa model Collaborative Filtering yang telah kita buat memiliki performa yang baik dalam merekomendasikan anime berdasarkan preferensi pengguna.
@@ -464,20 +468,22 @@ Dengan demikian, sistem rekomendasi anime yang telah kita kembangkan dapat memba
 
 # Referensi
 
-[1] A S Girsang, B Al Faruq, H R Herlianto and S Simbolon. (2020)."*Collaborative Recommendation System in Users of Anime Films*". IOP Science. https://iopscience.iop.org/article/10.1088/1742-6596/1566/1/012057/meta
+**[1]** A S Girsang, B Al Faruq, H R Herlianto and S Simbolon. (2020).*"Collaborative Recommendation System in Users of Anime Films"*. IOP Science. https://iopscience.iop.org/article/10.1088/1742-6596/1566/1/012057/meta
 
-[2] D Thornton. (2021). "*During coronavirus pandemic, popularity of anime increases*". Northwestern News. https://news.northwestern.edu/stories/2021/03/during-coronavirus-pandemic-popularity-of-anime-increases/
+**[2]** D Thornton. (2021). *"During coronavirus pandemic, popularity of anime increases"*. Northwestern News. https://news.northwestern.edu/stories/2021/03/during-coronavirus-pandemic-popularity-of-anime-increases/
 
-[3] CNN Indonesia. (2021). "*Pandemi 2020 Buat Netflix Kebanjiran 36,6 Juta Pelanggan Baru*". CNN Indonesia. https://www.cnnindonesia.com/hiburan/20210120132336-220-596129/pandemi-2020-buat-netflix-kebanjiran-366-juta-pelanggan-baru
+**[3]** CNN Indonesia. (2021). *"Pandemi 2020 Buat Netflix Kebanjiran 36,6 Juta Pelanggan Baru"*. CNN Indonesia. https://www.cnnindonesia.com/hiburan/20210120132336-220-596129/pandemi-2020-buat-netflix-kebanjiran-366-juta-pelanggan-baru
 
-[4] C Yang, L Bai, C Zhang, Q Yuan, J Han. (2017). "*Bridging Collaborative Filtering and Semi-Supervised Learning: A Neural Approach for POI Recommendation*". ACM Digital Library. https://dl.acm.org/doi/10.1145/3097983.3098094
+**[4]** C Yang, L Bai, C Zhang, Q Yuan, J Han. (2017). *"Bridging Collaborative Filtering and Semi-Supervised Learning: A Neural Approach for POI Recommendation"*. ACM Digital Library. https://dl.acm.org/doi/10.1145/3097983.3098094
 
-[5] LP2M. (2023). "*Algoritma K-Nearest Neighbors (KNN) – Pengertian dan Penerapan*". LP2M UMA. https://lp2m.uma.ac.id/2023/02/16/algoritma-k-nearest-neighbors-knn-pengertian-dan-penerapan/
+**[5]** CooperUnion. (2017). *"Anime Recommendations Database"*. Kaggle. https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database
 
-[6] M Darla. (2021). "*How and Why TF-IDF Works*". Towards Data Science. https://towardsdatascience.com/how-tf-idf-works-3dbf35e568f0
+**[6]** LP2M. (2023). *"Algoritma K-Nearest Neighbors (KNN) – Pengertian dan Penerapan"*. LP2M UMA. https://lp2m.uma.ac.id/2023/02/16/algoritma-k-nearest-neighbors-knn-pengertian-dan-penerapan/
 
-[7] S Banerjee. (2020). "*Collaborative Filtering for Movie Recommendations*". Keras. https://keras.io/examples/structured_data/collaborative_filtering_movielens/
+**[7]** M Darla. (2021). *"How and Why TF-IDF Works"*. Towards Data Science. https://towardsdatascience.com/how-tf-idf-works-3dbf35e568f0
 
-[8] Jonatasv. (2024). "*Metrics Evaluation: MSE, RMSE, MAE and MAPE*". Medium. https://medium.com/@jonatasv/metrics-evaluation-mse-rmse-mae-and-mape-317cab85a26b
+**[8]** G Developers. (2024). *"Collaborative filtering advantages & disadvantages"*. Google Developers. https://developers.google.com/machine-learning/recommendation/collaborative/summary
 
-[9] G Developers. (2024). "*Collaborative filtering advantages & disadvantages*". Google Developers. https://developers.google.com/machine-learning/recommendation/collaborative/summary
+**[9]** S Banerjee. (2020). *"Collaborative Filtering for Movie Recommendations"*. Keras. https://keras.io/examples/structured_data/collaborative_filtering_movielens/
+
+**[10]** Jonatasv. (2024). *"Metrics Evaluation: MSE, RMSE, MAE and MAPE"*. Medium. https://medium.com/@jonatasv/metrics-evaluation-mse-rmse-mae-and-mape-317cab85a26b
