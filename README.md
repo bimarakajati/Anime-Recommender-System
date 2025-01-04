@@ -298,10 +298,6 @@ Pada parameter `metric`, kita akan menggunakan `cosine` untuk mengukur kesamaan 
 
 Setelah model KNN dilatih, kita dapat menggunakan model tersebut untuk merekomendasikan anime berdasarkan genre anime yang dipilih. Berikut adalah contoh hasil rekomendasi untuk anime dengan genre `Adventure, Sci-Fi, Supernatural`:
 
-<!-- <p align="center">
-  <img src="images/image-5.png" alt="alt text" width="75%">
-</p> -->
-
 - **Judul anime random:** Silent Mobius: The Motion Picture
 - **Genre dari anime random:** Adventure, Sci-Fi, Supernatural
 
@@ -396,9 +392,29 @@ Dari hasil rekomendasi Collaborative Filtering, kita dapat melihat bahwa anime y
 
 ## Evaluation
 
-Pada tahap evaluasi, kita akan menggunakan metrik evaluasi yang sesuai dengan konteks data dan solusi yang telah kita buat. Metrik evaluasi yang akan digunakan dalam proyek ini adalah `Mean Squared Error (MSE)` dan `Mean Absolute Error (MAE)`.
+### Evaluasi Content-Based Filtering
 
-### Mean Squared Error (MSE)
+Pada tahap evaluasi Content-Based Filtering, kita akan menggunakan metrik evaluasi yang sesuai dengan konteks data dan solusi yang telah kita buat. Metrik evaluasi yang akan digunakan dalam proyek ini adalah `Recommender System Precision`.
+
+#### Recommender System Precision
+
+Recommender System Precision adalah metode evaluasi yang digunakan untuk mengukur seberapa akurat sistem rekomendasi dalam merekomendasikan item yang sesuai dengan preferensi pengguna. Precision mengukur rasio item yang relevan yang direkomendasikan oleh sistem dibandingkan dengan total item yang direkomendasikan oleh sistem. Precision dapat dihitung dengan rumus berikut:
+
+$$ \text{Recommender System Precision} = \frac{\text{Jumlah item relevan yang direkomendasikan}}{\text{Jumlah total item yang direkomendasikan}} $$
+
+#### Hasil Evaluasi Content-Based Filtering
+
+<p align="center">
+  <img src="images/image-5.png" alt="alt text" width="75%">
+</p>
+
+Dari hasil rekomendasi Content-Based Filtering di atas, diketahui bahwa `Silent Mobius: The Motion Picture` termasuk ke dalam genre `Adventure, Sci-Fi, Supernatural`. Dari 5 anime yang direkomendasikan, 5 anime memiliki genre yang bermiripan (similar). Artinya, **precision model Content-Based Filtering kita sebesar 5/5 atau 100%**.
+
+### Evaluasi Collaborative Filtering
+
+Pada tahap evaluasi Collaborative Filtering, kita akan menggunakan metrik evaluasi yang sesuai dengan konteks data dan solusi yang telah kita buat. Metrik evaluasi yang akan digunakan dalam proyek ini adalah `Mean Squared Error (MSE)` dan `Mean Absolute Error (MAE)`.
+
+#### Mean Squared Error (MSE)
 
 Mean Squared Error (MSE) adalah salah satu metode evaluasi yang umum digunakan dalam data science. MSE menghitung rata-rata dari selisih kuadrat antara nilai prediksi dan nilai aktual.
 
@@ -413,7 +429,7 @@ di mana:
 - $y_i$ adalah nilai sebenarnya.
 - $\hat{y}_i$ adalah nilai prediksi.
 
-### Mean Absolute Error (MAE)
+#### Mean Absolute Error (MAE)
 
 Mean Absolute Error (MAE) adalah metode evaluasi lain yang digunakan dalam data science. MAE menghitung rata-rata dari selisih absolut antara nilai prediksi dan nilai aktual.
 
@@ -428,7 +444,7 @@ di mana:
 - $y_i$ adalah nilai sebenarnya.
 - $\hat{y}_i$ adalah nilai prediksi.
 
-### Hasil Evaluasi
+#### Hasil Evaluasi Collaborative Filtering
 
 <p align="center">
   <img src="images/image-10.png" alt="alt text" width="75%">
