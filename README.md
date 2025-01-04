@@ -306,7 +306,18 @@ Dari hasil rekomendasi, kita dapat melihat bahwa anime yang direkomendasikan mem
 
 ### Collaborative Filtering (RecommenderNet)
 
-Collaborative Filtering adalah metode rekomendasi yang berfokus pada kesamaan preferensi pengguna. Pada metode ini, rekomendasi diberikan berdasarkan kesamaan preferensi pengguna dengan pengguna lainnya. Salah satu algoritma yang dapat digunakan dalam Collaborative Filtering adalah algoritma deep learning `RecommenderNet`.
+Collaborative Filtering adalah metode rekomendasi yang berfokus pada kesamaan preferensi pengguna. Pada metode ini, rekomendasi diberikan berdasarkan kesamaan preferensi pengguna dengan pengguna lainnya. Salah satu algoritma yang dapat digunakan dalam Collaborative Filtering adalah algoritma deep learning `RecommenderNet`. Berikut adalah kelebihan dan kekurangan dari Collaborative Filtering [[9]](https://developers.google.com/machine-learning/recommendation/collaborative/summary):
+
+**Kelebihan**:
+
+1. **Tidak memerlukan pengetahuan domain**: Kita tidak memerlukan pengetahuan domain (*domain knowledge*) karena sistem hanya menggunakan data rating untuk merekomendasikan anime.
+2. **Serendipity**: Sistem rekomendasi mungkin tidak tahu bahwa pengguna tertarik pada anime tertentu, tetapi model mungkin tetap merekomendasikannya karena pengguna serupa tertarik pada anime tersebut.
+3. **Titik awal yang bagus**: Collaborative Filtering adalah titik awal yang bagus untuk sistem rekomendasi karena tidak memerlukan data tambahan seperti genre, studio, atau fitur lainnya.
+
+**Kekurangan**:
+
+1. **Cold Start Problem**: Collaborative Filtering tidak dapat memberikan rekomendasi untuk pengguna baru atau item baru karena tidak ada data rating yang tersedia.
+2. **Sulit untuk memasukkan fitur sampingan untuk anime**: Collaborative Filtering hanya menggunakan data rating, sehingga sulit untuk memasukkan fitur sampingan seperti genre, studio, atau fitur lainnya.
 
 #### RecommenderNet
 
@@ -439,3 +450,5 @@ Dengan demikian, sistem rekomendasi anime yang telah kita kembangkan dapat memba
 [7] S Banerjee. (2020). "*Collaborative Filtering for Movie Recommendations*". Keras. https://keras.io/examples/structured_data/collaborative_filtering_movielens/
 
 [8] Jonatasv. (2024). "*Metrics Evaluation: MSE, RMSE, MAE and MAPE*". Medium. https://medium.com/@jonatasv/metrics-evaluation-mse-rmse-mae-and-mape-317cab85a26b
+
+[9] G Developers. (2024). "*Collaborative filtering advantages & disadvantages*". Google Developers. https://developers.google.com/machine-learning/recommendation/collaborative/summary
