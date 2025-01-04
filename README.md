@@ -456,7 +456,9 @@ Dari hasil evaluasi Collaborative Filtering menggunakan metrik MSE dan MAE, kita
 
 Dalam proyek ini, kita telah berhasil mengembangkan sistem rekomendasi anime menggunakan dua pendekatan, yaitu Content-Based Filtering dan Collaborative Filtering. Pada pendekatan Content-Based Filtering, kita menggunakan algoritma K-Nearest Neighbors (KNN) untuk merekomendasikan anime berdasarkan genre anime yang dipilih. Sedangkan pada pendekatan Collaborative Filtering, kita menggunakan algoritma deep learning RecommenderNet untuk merekomendasikan anime berdasarkan preferensi pengguna.
 
-Dari hasil evaluasi, kita dapat melihat bahwa model Collaborative Filtering memiliki performa yang baik dalam merekomendasikan anime berdasarkan preferensi pengguna. Nilai MSE dan MAE yang rendah menunjukkan bahwa model Collaborative Filtering mampu memberikan rekomendasi yang sesuai dengan preferensi pengguna.
+Dari hasil evaluasi, kita dapat melihat bahwa model Content-Based Filtering menunjukkan performa yang baik dalam merekomendasikan anime berdasarkan genre. Dengan precision sebesar 100%, model Content-Based Filtering mampu memberikan rekomendasi yang sangat relevan dengan genre anime yang dipilih pengguna.
+
+Selain itu, hasil evaluasi Collaborative Filtering juga memiliki performa yang baik dalam merekomendasikan anime berdasarkan preferensi pengguna. Nilai MSE dan MAE yang rendah menunjukkan bahwa model Collaborative Filtering mampu memberikan rekomendasi yang sesuai dengan preferensi pengguna.
 
 Dengan demikian, sistem rekomendasi anime yang telah kita kembangkan dapat membantu pengguna menemukan anime yang sesuai dengan preferensi mereka dengan lebih mudah dan cepat.
 
