@@ -298,9 +298,20 @@ Pada parameter `metric`, kita akan menggunakan `cosine` untuk mengukur kesamaan 
 
 Setelah model KNN dilatih, kita dapat menggunakan model tersebut untuk merekomendasikan anime berdasarkan genre anime yang dipilih. Berikut adalah contoh hasil rekomendasi untuk anime dengan genre `Adventure, Sci-Fi, Supernatural`:
 
-<p align="center">
+<!-- <p align="center">
   <img src="images/image-5.png" alt="alt text" width="75%">
-</p>
+</p> -->
+
+- **Judul anime random:** Silent Mobius: The Motion Picture
+- **Genre dari anime random:** Adventure, Sci-Fi, Supernatural
+
+  | anime_id | name                          | genre                                      | rating | members |
+  |----------|-------------------------------|--------------------------------------------|--------|---------|
+  | 1069     | Chou Denji Machine Voltes V   | Action, Adventure, Drama, Mecha, Sci-Fi, Shounen | 7.54   | 3201    |
+  | 411      | Gun x Sword                   | Action, Adventure, Drama, Mecha, Sci-Fi, Shounen | 7.38   | 45921   |
+  | 2747     | Tetsuwan Atom                 | Action, Adventure, Drama, Mecha, Sci-Fi, Shounen | 7.28   | 5332    |
+  | 10342    | Tetsuwan Atom: Uchuu no Yuusha| Action, Adventure, Drama, Mecha, Sci-Fi, Shounen | 6.51   | 661     |
+  | 1626     | Genma Taisen                  | Action, Adventure, Comedy, Drama, Mecha, Sci-Fi  | 5.10   | 2055    |
 
 Dari hasil rekomendasi, kita dapat melihat bahwa anime yang direkomendasikan memiliki genre yang mirip dengan anime random yang terpilih. Hal ini menunjukkan bahwa model rekomendasi Content-based Filtering menggunakan algoritma K-Nearest Neighbors (KNN) telah berhasil memberikan rekomendasi yang sesuai dengan preferensi pengguna.
 
