@@ -234,7 +234,7 @@ Pada tahap ini, kita akan membuat model rekomendasi menggunakan metode **Content
 
 ### Content-Based Filtering (K-Nearest Neighbors)
 
-Content-based Filtering adalah metode rekomendasi yang berfokus pada konten dari item yang direkomendasikan. Pada metode ini, rekomendasi diberikan berdasarkan kesamaan antara genre anime yang dipilih dengan genre anime lainnya. Salah satu algoritma yang dapat digunakan dalam Content-based Filtering adalah algoritma `K-Nearest Neighbors (KNN)`.
+Content-based Filtering adalah metode rekomendasi yang berfokus pada konten dari anime yang direkomendasikan. Pada metode ini, rekomendasi diberikan berdasarkan kesamaan antara genre anime yang dipilih dengan genre anime lainnya. Salah satu algoritma yang dapat digunakan dalam Content-based Filtering adalah algoritma `K-Nearest Neighbors (KNN)`.
 
 #### K-Nearest Neighbors (KNN)
 
@@ -292,7 +292,7 @@ Setelah kita mengekstraksi fitur menggunakan TF-IDF, kita dapat melatih model KN
 knn_model = NearestNeighbors(metric='cosine', algorithm='brute')
 ```
 
-Pada parameter `metric`, kita akan menggunakan `cosine` untuk mengukur kesamaan antara item, dan pada parameter `algorithm`, kita akan menggunakan `brute` untuk menghitung jarak antara item.
+Pada parameter `metric`, kita akan menggunakan `cosine` untuk mengukur kesamaan antara anime, dan pada parameter `algorithm`, kita akan menggunakan `brute` untuk menghitung jarak antara anime.
 
 #### Hasil Rekomendasi
 
@@ -323,7 +323,7 @@ Collaborative Filtering adalah metode rekomendasi yang berfokus pada kesamaan pr
 
 **Kekurangan**:
 
-1. **Cold Start Problem**: Collaborative Filtering tidak dapat memberikan rekomendasi untuk pengguna baru atau item baru karena tidak ada data rating yang tersedia.
+1. **Cold Start Problem**: Collaborative Filtering tidak dapat memberikan rekomendasi untuk pengguna baru atau anime baru karena tidak ada data rating yang tersedia.
 2. **Sulit untuk memasukkan fitur sampingan untuk anime**: Collaborative Filtering hanya menggunakan data rating, sehingga sulit untuk memasukkan fitur sampingan seperti genre, studio, atau fitur lainnya.
 
 #### RecommenderNet
@@ -398,7 +398,7 @@ Pada tahap evaluasi Content-Based Filtering, kita akan menggunakan metrik evalua
 
 #### Recommender System Precision
 
-Recommender System Precision adalah metode evaluasi yang digunakan untuk mengukur seberapa akurat sistem rekomendasi dalam merekomendasikan item yang sesuai dengan preferensi pengguna. Precision mengukur rasio item yang relevan yang direkomendasikan oleh sistem dibandingkan dengan total item yang direkomendasikan oleh sistem. Precision dapat dihitung dengan rumus berikut:
+Recommender System Precision adalah metode evaluasi yang digunakan untuk mengukur seberapa akurat sistem rekomendasi dalam merekomendasikan anime yang sesuai dengan preferensi pengguna. Precision mengukur rasio item yang relevan yang direkomendasikan oleh sistem dibandingkan dengan total item yang direkomendasikan oleh sistem. Precision dapat dihitung dengan rumus berikut:
 
 $$ \text{Recommender System Precision} = \frac{\text{Jumlah item relevan yang direkomendasikan}}{\text{Jumlah total item yang direkomendasikan}} $$
 
