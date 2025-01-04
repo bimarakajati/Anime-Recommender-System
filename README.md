@@ -2,29 +2,15 @@
 
 ## Project Overview
 
-<!-- Pada bagian ini, Kamu perlu menuliskan latar belakang yang relevan dengan proyek yang diangkat.
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Jelaskan mengapa proyek ini penting untuk diselesaikan.
-- Menyertakan hasil riset terkait atau referensi. Referensi yang diberikan harus berasal dari sumber yang kredibel dan author yang jelas.
-  
-Format Referensi: [Judul Referensi](https://scholar.google.com/)  -->
-
 <p align="center">
   <img src="images/image-12.png" alt="alt text" width="100%">
 </p>
 
 Sistem rekomendasi telah menjadi elemen penting dalam berbagai platform digital, termasuk layanan streaming anime, yang semakin diminati di era modern. Dengan jumlah judul anime yang terus bertambah, pengguna sering kali mengalami kesulitan dalam menemukan anime yang sesuai dengan preferensi mereka [[1]](https://iopscience.iop.org/article/10.1088/1742-6596/1566/1/012057/meta). Masalah ini semakin relevan selama pandemi COVID-19, ketika layanan streaming dan hiburan daring, termasuk anime, mengalami lonjakan popularitas [[2]](https://northwesternnews.rangerpulse.com/during-coronavirus-pandemic-popularity-of-anime-increases/). Pandemi mendorong banyak orang untuk menghabiskan lebih banyak waktu di rumah, sehingga meningkatkan jumlah pelanggan dan penonton pada platform seperti Netflix, Hulu, Crunchyroll, dan Funimation [[3]](https://www.cnnindonesia.com/hiburan/20210120132336-220-596129/pandemi-2020-buat-netflix-kebanjiran-366-juta-pelanggan-baru).
 
-<!-- <p align="center">
-  <img src="images/image-11.png" alt="alt text" width="50%">
-</p> -->
-
 Kondisi ini menciptakan peluang sekaligus tantangan bagi penyedia layanan untuk menawarkan pengalaman yang lebih personal dan relevan bagi pengguna. Oleh karena itu, proyek ini bertujuan mengembangkan sistem rekomendasi anime yang efektif, guna membantu pengguna menemukan anime yang sesuai dengan selera mereka secara lebih mudah dan cepat. Selain meningkatkan pengalaman pengguna, sistem rekomendasi yang andal juga memiliki potensi untuk meningkatkan retensi pengguna, durasi penggunaan platform, serta pendapatan penyedia layanan [[4]](https://dl.acm.org/doi/10.1145/3097983.3098094).
 
 ## Business Understanding
-
-<!-- Pada bagian ini, Anda perlu menjelaskan proses klarifikasi masalah. -->
 
 Berdasarkan latar belakang yang telah dijelaskan, kita dapat merumuskan pernyataan masalah sebagai berikut:
 
@@ -48,17 +34,6 @@ Untuk mencapai goals yang telah ditetapkan, proyek ini akan mengimplementasikan 
 2. **Collaborative Filtering**: Pendekatan ini merekomendasikan anime berdasarkan kesamaan preferensi pengguna. Sistem ini akan mencari pengguna lain yang memiliki preferensi serupa dengan pengguna yang bersangkutan, lalu merekomendasikan anime yang disukai oleh pengguna lain tersebut.
 
 ## Data Understanding
-<!-- Paragraf awal bagian ini menjelaskan informasi mengenai jumlah data, kondisi data, dan informasi mengenai data yang digunakan. Sertakan juga sumber atau tautan untuk mengunduh dataset. Contoh: [UCI Machine Learning Repository](https://archive.ics.uci.edu/ml/datasets/Restaurant+%26+consumer+data).
-
-Selanjutnya, uraikanlah seluruh variabel atau fitur pada data. Sebagai contoh:  
-
-Variabel-variabel pada Restaurant UCI dataset adalah sebagai berikut:
-- accepts : merupakan jenis pembayaran yang diterima pada restoran tertentu.
-- cuisine : merupakan jenis masakan yang disajikan pada restoran.
-- dst
-
-**Rubrik/Kriteria Tambahan (Opsional)**:
-- Melakukan beberapa tahapan yang diperlukan untuk memahami data, contohnya teknik visualisasi data beserta insight atau exploratory data analysis. -->
 
 Data yang digunakan dalam proyek ini diambil dari [Anime Recommendations Database](https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database/data) yang tersedia di Kaggle. Dataset ini terdiri dari dua file utama: `anime.csv` yang berisi informasi tentang berbagai anime, dan `rating.csv` yang berisi rating yang diberikan oleh pengguna untuk setiap anime. Dataset ini berisi informasi tentang preferensi pengguna dari 73.516 pengguna pada 12.294 anime. Setiap pengguna dapat menambahkan anime ke daftar yang telah mereka selesaikan dan memberikan rating, dan dataset ini merupakan kompilasi dari rating tersebut.
 
@@ -206,11 +181,6 @@ Dari tabel di atas, kita dapat melihat bahwa pengguna dengan `user_id` **48766**
 Dari visualisasi di atas, kita dapat melihat bahwa sebagian besar pengguna memberikan rating antara `6` hingga `10`. Hal ini menunjukkan bahwa mayoritas pengguna memberikan rating yang cukup baik untuk anime yang mereka tonton. Selain itu, terdapat sejumlah pengguna yang memiliki rating `-1`, hal menunjukkan bahwa mereka menonton anime tersebut tetapi tidak memberikan rating. Data rating `-1` ini kemungkinan besar akan dihapus karena tidak memberikan informasi yang berguna dalam pembuatan model rekomendasi.
 
 ## Data Preparation
-<!-- Pada bagian ini Anda menerapkan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan proses data preparation yang dilakukan
-- Menjelaskan alasan mengapa diperlukan tahapan data preparation tersebut. -->
 
 Pada tahap ini, kita akan melakukan beberapa langkah data pre-preparation untuk mempersiapkan data sebelum digunakan dalam pembuatan model rekomendasi. Langkah-langkah pre-preparation yang akan dilakukan antara lain adalah filtering data, handling inrelevant data, dan handling duplicate data.
 
@@ -259,11 +229,6 @@ Dari tabel di atas, kita dapat melihat bahwa terdapat sebanyak **289.627** ratin
 Pada penanganan data duplikat, terlihat bahwa tidak ada data duplikat yang ditemukan dalam dataset `anime.csv` maupun `rating.csv` setelah dilakukan pengecekan. Oleh karena itu, tidak perlu dilakukan penanganan data duplikat dalam tahap ini.
 
 ## Modeling
-<!-- Tahapan ini membahas mengenai model sisten rekomendasi yang Anda buat untuk menyelesaikan permasalahan. Sajikan top-N recommendation sebagai output.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menyajikan dua solusi rekomendasi dengan algoritma yang berbeda.
-- Menjelaskan kelebihan dan kekurangan dari solusi/pendekatan yang dipilih. -->
 
 Pada tahap ini, kita akan membuat model rekomendasi menggunakan metode **Content-Based Filtering** dan **Collaborative Filtering**. Kita akan menggunakan algoritma machine learning `K-Nearest Neighbors (KNN)` untuk membuat model rekomendasi **Content-Based Filtering**, dan algoritma deep learning `RecommenderNet` untuk membuat model rekomendasi **Collaborative Filtering**.
 
@@ -315,7 +280,6 @@ di mana:
 #### TF-IDF
 TF-IDF adalah hasil perkalian antara TF dan IDF. Rumusnya adalah:
 
-<!-- \[ \text{TF-IDF}(t, d, D) = \text{TF}(t, d) \times \text{IDF}(t, D) \] -->
 $$ \text{TF-IDF}(t, d, D) = \text{TF}(t, d) \times \text{IDF}(t, D) $$
 
 Dengan menggunakan TF-IDF, kita dapat memberikan bobot yang lebih tinggi pada kata-kata yang sering muncul dalam dokumen tertentu tetapi jarang muncul dalam dokumen lain, sehingga lebih mencerminkan pentingnya kata tersebut dalam konteks dokumen tertentu.
@@ -409,14 +373,6 @@ Hasil dari pengguna random yang dipilih adalah sebagai berikut:
 Dari hasil rekomendasi Collaborative Filtering, kita dapat melihat bahwa anime yang direkomendasikan memiliki rating yang tinggi dan sesuai dengan preferensi pengguna. Selain itu, genre dari anime yang direkomendasikan juga memiliki kemiripan dengan genre anime yang telah ditonton oleh pengguna. Hal ini menunjukkan bahwa model Collaborative Filtering yang telah kita buat telah berhasil memberikan rekomendasi yang sesuai dengan preferensi pengguna.
 
 ## Evaluation
-<!-- Pada bagian ini Anda perlu menyebutkan metrik evaluasi yang digunakan. Kemudian, jelaskan hasil proyek berdasarkan metrik evaluasi tersebut.
-
-Ingatlah, metrik evaluasi yang digunakan harus sesuai dengan konteks data, problem statement, dan solusi yang diinginkan.
-
-**Rubrik/Kriteria Tambahan (Opsional)**: 
-- Menjelaskan formula metrik dan bagaimana metrik tersebut bekerja.
-
-**---Ini adalah bagian akhir laporan---** -->
 
 Pada tahap evaluasi, kita akan menggunakan metrik evaluasi yang sesuai dengan konteks data dan solusi yang telah kita buat. Metrik evaluasi yang akan digunakan dalam proyek ini adalah `Mean Squared Error (MSE)` dan `Mean Absolute Error (MAE)`.
 
@@ -483,7 +439,3 @@ Dengan demikian, sistem rekomendasi anime yang telah kita kembangkan dapat memba
 [7] S Banerjee. (2020). "*Collaborative Filtering for Movie Recommendations*". Keras. https://keras.io/examples/structured_data/collaborative_filtering_movielens/
 
 [8] Trivusi. (2023). "*Perbedaan MAE, MSE, RMSE, dan MAPE pada Data Science*". Trivusi. https://www.trivusi.web.id/2023/03/perbedaan-mae-mse-rmse-dan-mape.html
-
-<!-- _Catatan:_
-- _Anda dapat menambahkan gambar, kode, atau tabel ke dalam laporan jika diperlukan. Temukan caranya pada contoh dokumen markdown di situs editor [Dillinger](https://dillinger.io/), [Github Guides: Mastering markdown](https://guides.github.com/features/mastering-markdown/), atau sumber lain di internet. Semangat!_
-- Jika terdapat penjelasan yang harus menyertakan code snippet, tuliskan dengan sewajarnya. Tidak perlu menuliskan keseluruhan kode project, cukup bagian yang ingin dijelaskan saja.# Anime-Recommender-System -->
