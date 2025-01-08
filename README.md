@@ -222,40 +222,19 @@ Dari tabel di atas, kita dapat melihat bahwa terdapat sebanyak **289.627** ratin
 
 ### Handling Duplicate Data
 
+Pada tahap ini, kita akan mengecek apakah terdapat data duplikat dalam dataset `anime.csv` dan `rating.csv`. Data duplikat dapat mempengaruhi hasil analisis data dan membuat model rekomendasi menjadi tidak akurat. Oleh karena itu, penanganan data duplikat perlu dilakukan untuk memastikan kualitas data yang digunakan dalam pembuatan model rekomendasi.
+
 <p align="center">
   <img src="images/image-4.png" alt="Handling Duplicate Data" width="75%">
 </p>
 
 Pada penanganan data duplikat, terlihat bahwa tidak ada data duplikat yang ditemukan dalam dataset `anime.csv` maupun `rating.csv` setelah dilakukan pengecekan. Oleh karena itu, tidak perlu dilakukan penanganan data duplikat dalam tahap ini.
 
-## Modeling
+### Content-Based Filtering Preparation
 
-Pada tahap ini, kita akan membuat model rekomendasi menggunakan metode **Content-Based Filtering** dan **Collaborative Filtering**. Kita akan menggunakan algoritma machine learning `K-Nearest Neighbors (KNN)` untuk membuat model rekomendasi **Content-Based Filtering**, dan algoritma deep learning `RecommenderNet` untuk membuat model rekomendasi **Collaborative Filtering**.
+#### TF-IDF (Term Frequency-Inverse Document Frequency)
 
-### Content-Based Filtering (K-Nearest Neighbors)
-
-Content-based Filtering adalah metode rekomendasi yang berfokus pada konten dari anime yang direkomendasikan. Pada metode ini, rekomendasi diberikan berdasarkan kesamaan antara genre anime yang dipilih dengan genre anime lainnya. Salah satu algoritma yang dapat digunakan dalam Content-based Filtering adalah algoritma `K-Nearest Neighbors (KNN)`.
-
-#### K-Nearest Neighbors (KNN)
-
-K-Nearest Neighbors (KNN) adalah algoritma machine learning yang biasa digunakan untuk klasifikasi dan regresi. Pada konteks Content-Based Filtering, KNN juga dapat digunakan untuk merekomendasikan item berdasarkan kesamaan antara item yang dipilih dengan item lainnya. Algoritma KNN bekerja dengan cara mencari K item terdekat dengan item yang dipilih berdasarkan jarak antara item tersebut. Item-item yang memiliki jarak terdekat dengan item yang dipilih akan direkomendasikan kepada pengguna [[6]](https://lp2m.uma.ac.id/2023/02/16/algoritma-k-nearest-neighbors-knn-pengertian-dan-penerapan/).
-
-Berikut adalah kelebihan dan kekurangan dari Content-Based Filtering menggunakan algoritma KNN:
-
-**Kelebihan:**
-1. **Sederhana dan Mudah Dipahami**: KNN adalah algoritma yang sederhana dan mudah dipahami, sehingga mudah diimplementasikan.
-2. **Tidak Membutuhkan Asumsi Distribusi Data**: KNN tidak membuat asumsi tentang distribusi data, sehingga dapat digunakan pada berbagai jenis data.
-3. **Adaptif terhadap Data Baru**: KNN dapat dengan mudah menyesuaikan dengan data baru tanpa perlu melatih ulang model, karena hanya menyimpan data pelatihan dan menghitung jarak saat prediksi.
-
-**Kekurangan:**
-1. **Komputasi yang Mahal**: KNN membutuhkan banyak komputasi, terutama pada dataset besar, karena harus menghitung jarak ke semua titik data pelatihan untuk setiap prediksi.
-2. **Memori yang Tinggi**: KNN membutuhkan banyak memori untuk menyimpan seluruh dataset pelatihan, yang dapat menjadi masalah pada dataset besar.
-3. **Sensitif terhadap Skala Fitur**: KNN sensitif terhadap skala fitur, sehingga memerlukan normalisasi atau standarisasi data agar fitur dengan skala besar tidak mendominasi perhitungan jarak.
-4. **Tidak Efektif pada Data Berdimensi Tinggi**: Kinerja KNN menurun pada data berdimensi tinggi karena fenomena "curse of dimensionality", di mana jarak antar titik data menjadi kurang bermakna.
-
-Sebelum kita melatih model KNN, kita akan menggunakan TF-IDF (Term Frequency-Inverse Document Frequency) untuk mengekstraksi fitur dari data anime. Dalam kasus ini, kita akan menggunakan kolom `genre` dari dataset `anime.csv` sebagai teks yang akan diekstraksi fiturnya.
-
-### TF-IDF (Term Frequency-Inverse Document Frequency)
+Sebelum kita melatih model Content-Based Filtering dengan KNN, kita akan menggunakan TF-IDF (*Term Frequency-Inverse Document Frequency*) untuk mengekstraksi fitur dari data anime. Dalam kasus ini, kita akan menggunakan kolom `genre` dari dataset `anime.csv` sebagai teks yang akan diekstraksi fiturnya.
 
 TF-IDF adalah metode yang digunakan untuk mengekstraksi fitur dari teks dengan memberikan bobot pada kata-kata yang muncul dalam teks. TF-IDF terdiri dari dua komponen utama: Term Frequency (TF) dan Inverse Document Frequency (IDF) [[7]](https://towardsdatascience.com/how-tf-idf-works-3dbf35e568f0).
 
@@ -284,9 +263,52 @@ $$ \text{TF-IDF}(t, d, D) = \text{TF}(t, d) \times \text{IDF}(t, D) $$
 
 Dengan menggunakan TF-IDF, kita dapat memberikan bobot yang lebih tinggi pada kata-kata yang sering muncul dalam dokumen tertentu tetapi jarang muncul dalam dokumen lain, sehingga lebih mencerminkan pentingnya kata tersebut dalam konteks dokumen tertentu.
 
+### Collaborative Filtering Preparation
+
+#### Encoding Data
+
+Sebelum kita melatih model Collaborative Filtering dengan RecommenderNet, kita akan menyandikan (*encode*) data `user_id` dan `anime_id` ke dalam indeks integer. Selain itu, kita juga akan mencari data rating terendah dan tertinggi yang akan digunakan dalam proses splitting data nanti. Berikut adalah hasil encoding data `user_id` dan `anime_id`, dan dataframe yang berisi data jumlah pengguna, anime, dan rating terendah dan tertinggi:
+
+<p align="center">
+  <img src="images/image-6.png" alt="Encoding Data" width="75%">
+</p>
+
+#### Split Data
+
+Lalu, kita akan membagi data menjadi data training dan data testing dengan rasio 70:30. Data training akan digunakan untuk melatih model, sedangkan data testing akan digunakan untuk mengevaluasi model.
+
+<p align="center">
+  <img src="images/image-7.png" alt="Split Data" width="25%">
+</p>
+
+## Modeling
+
+Pada tahap ini, kita akan membuat model rekomendasi menggunakan metode **Content-Based Filtering** dan **Collaborative Filtering**. Kita akan menggunakan algoritma machine learning `K-Nearest Neighbors (KNN)` untuk membuat model rekomendasi **Content-Based Filtering**, dan algoritma deep learning `RecommenderNet` untuk membuat model rekomendasi **Collaborative Filtering**.
+
+### Content-Based Filtering (K-Nearest Neighbors)
+
+Content-based Filtering adalah metode rekomendasi yang berfokus pada konten dari anime yang direkomendasikan. Pada metode ini, rekomendasi diberikan berdasarkan kesamaan antara genre anime yang dipilih dengan genre anime lainnya. Salah satu algoritma yang dapat digunakan dalam Content-based Filtering adalah algoritma `K-Nearest Neighbors (KNN)`.
+
+#### K-Nearest Neighbors (KNN)
+
+K-Nearest Neighbors (KNN) adalah algoritma machine learning yang biasa digunakan untuk klasifikasi dan regresi. Pada konteks Content-Based Filtering, KNN juga dapat digunakan untuk merekomendasikan item berdasarkan kesamaan antara item yang dipilih dengan item lainnya. Algoritma KNN bekerja dengan cara mencari K item terdekat dengan item yang dipilih berdasarkan jarak antara item tersebut. Item-item yang memiliki jarak terdekat dengan item yang dipilih akan direkomendasikan kepada pengguna [[6]](https://lp2m.uma.ac.id/2023/02/16/algoritma-k-nearest-neighbors-knn-pengertian-dan-penerapan/).
+
+Berikut adalah kelebihan dan kekurangan dari Content-Based Filtering menggunakan algoritma KNN:
+
+**Kelebihan:**
+1. **Sederhana dan Mudah Dipahami**: KNN adalah algoritma yang sederhana dan mudah dipahami, sehingga mudah diimplementasikan.
+2. **Tidak Membutuhkan Asumsi Distribusi Data**: KNN tidak membuat asumsi tentang distribusi data, sehingga dapat digunakan pada berbagai jenis data.
+3. **Adaptif terhadap Data Baru**: KNN dapat dengan mudah menyesuaikan dengan data baru tanpa perlu melatih ulang model, karena hanya menyimpan data pelatihan dan menghitung jarak saat prediksi.
+
+**Kekurangan:**
+1. **Komputasi yang Mahal**: KNN membutuhkan banyak komputasi, terutama pada dataset besar, karena harus menghitung jarak ke semua titik data pelatihan untuk setiap prediksi.
+2. **Memori yang Tinggi**: KNN membutuhkan banyak memori untuk menyimpan seluruh dataset pelatihan, yang dapat menjadi masalah pada dataset besar.
+3. **Sensitif terhadap Skala Fitur**: KNN sensitif terhadap skala fitur, sehingga memerlukan normalisasi atau standarisasi data agar fitur dengan skala besar tidak mendominasi perhitungan jarak.
+4. **Tidak Efektif pada Data Berdimensi Tinggi**: Kinerja KNN menurun pada data berdimensi tinggi karena fenomena "curse of dimensionality", di mana jarak antar titik data menjadi kurang bermakna.
+
 #### Pelatihan Model KNN
 
-Setelah kita mengekstraksi fitur menggunakan TF-IDF, kita dapat melatih model KNN untuk merekomendasikan anime berdasarkan genre anime yang dipilih.
+Pada tahap ini, kita akan melatih model KNN menggunakan data anime yang telah diekstraksi fiturnya menggunakan TF-IDF. Model KNN ini akan digunakan untuk merekomendasikan anime berdasarkan genre anime yang dipilih oleh pengguna.
 
 ```python
 knn_model = NearestNeighbors(metric='cosine', algorithm='brute')
@@ -332,22 +354,6 @@ Di sini, kita akan membuat class RecommenderNet menggunakan class Model dari Ker
 
 <p align="center">
   <img src="images/image-16.png" alt="RecommenderNet Model" width="50%">
-</p>
-
-#### Encoding Data
-
-Selanjutnya kita akan menyandikan (encode) data user_id dan anime_id ke dalam indeks integer. Selain itu, kita juga akan mencari data rating terendah dan tertinggi yang akan digunakan dalam proses splitting data nanti. Berikut adalah hasil encoding data user_id dan anime_id, dan dataframe yang berisi data jumlah pengguna, anime, dan rating terendah dan tertinggi:
-
-<p align="center">
-  <img src="images/image-6.png" alt="Encoding Data" width="75%">
-</p>
-
-#### Split Data
-
-Lalu, kita akan membagi data menjadi data training dan data testing dengan rasio 70:30. Data training akan digunakan untuk melatih model, sedangkan data testing akan digunakan untuk mengevaluasi model.
-
-<p align="center">
-  <img src="images/image-7.png" alt="Split Data" width="25%">
 </p>
 
 #### Pelatihan Model RecommenderNet
