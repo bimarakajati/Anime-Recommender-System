@@ -182,7 +182,7 @@ Dari visualisasi di atas, kita dapat melihat bahwa sebagian besar pengguna membe
 
 ## Data Preparation
 
-Pada tahap ini, kita akan melakukan beberapa langkah data pre-preparation untuk mempersiapkan data sebelum digunakan dalam pembuatan model rekomendasi. Langkah-langkah pre-preparation yang akan dilakukan antara lain adalah filtering data, handling inrelevant data, dan handling duplicate data.
+Pada tahap ini, kita akan melakukan beberapa langkah data pre-preparation untuk mempersiapkan data sebelum digunakan dalam pembuatan model rekomendasi. Langkah-langkah pre-preparation yang akan dilakukan antara lain adalah *filtering data*, *handling inrelevant data*, *handling duplicate data*, *feature extraction*, *encoding data*, dan *splitting data*.
 
 ### Filter Pengguna dengan Rating Sebanyak 500 atau Lebih
 
