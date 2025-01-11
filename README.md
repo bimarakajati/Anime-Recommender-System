@@ -1,4 +1,4 @@
-# Laporan Proyek Machine Learning - Bima Rakajati
+# Laporan Proyek Machine Learning
 
 ## Project Overview
 
